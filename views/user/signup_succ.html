@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up</title>
+</head>
+<body>
+<div>
+    <% if (user) { %>
+        <% if (user.displayName) { %>
+        <label style="color: red"><%= user.displayName %></label>
+        <% } %>
+        <br>
+        <% if (user.emails && user.emails.length > 0 && user.emails[0].value) { %>
+        <label style="color: red"><%= user.emails[0].value %></label>
+        <% } %>
+    <% } else { %>
+    <label style="color: red"><a href="signup">please sign up</a></label>
+    <% } %>
+</div>
+</body>
+</html>
