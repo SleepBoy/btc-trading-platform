@@ -3,7 +3,7 @@
  */
 module.exports = function (orm, db) {
     var Email = db.define('email', {
-        value       : { type: 'text', required: true },
+        value       : { type: 'text', size: 1024, required: true },
         type        : { type: "enum", required: true, values: [ "Home", "Work", "Other" ] },
     },
     {

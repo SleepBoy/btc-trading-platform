@@ -6,11 +6,11 @@ var moment = require('moment');
 module.exports = function (orm, db) {
     var User = db.define('user', {
         id          : { type: 'text', size: 64, required: true },
-        displayName : { type: 'text', required: false },
+        displayName : { type: 'text', size: 64, required: false },
 
-        familyName  : { type: 'text', required: false },
-        givenName   : { type: 'text', required: false },
-        middleName  : { type: 'text', required: false }
+        familyName  : { type: 'text', size: 64, required: false },
+        givenName   : { type: 'text', size: 64, required: false },
+        middleName  : { type: 'text', size: 64, required: false }
     },
     {
         timestamp   : true,

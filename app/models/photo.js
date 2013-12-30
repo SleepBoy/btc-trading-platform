@@ -3,7 +3,7 @@
  */
 module.exports = function (orm, db) {
     var Photo = db.define('photo', {
-        value       : { type: 'text', required: true },
+        value       : { type: 'text', size: 1024, required: true },
         },
     {
         timestamp   : true,

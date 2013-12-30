@@ -5,7 +5,7 @@ var crypto = require('crypto');
 
 module.exports = function (orm, db) {
     var Password = db.define('password', {
-        value: { type: 'text', required: true },
+        value: { type: 'text', size: 64, required: true }
     },
     {
         timestamp   : true,
