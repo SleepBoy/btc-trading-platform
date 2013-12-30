@@ -1,9 +1,9 @@
-var path     = require('path');
-var express  = require('express');
+var path = require('path');
+var express = require('express');
 var passport = require('passport');
-var flash    = require('connect-flash');
+var flash = require('connect-flash');
 var settings = require('./settings');
-var models   = require('../app/models/');
+var models = require('../app/models/');
 
 module.exports = function (app) {
     app.configure(function () {
@@ -28,9 +28,9 @@ module.exports = function (app) {
                 if (err) return next(err);
 
                 req.models = db.models;
-                req.db     = db;
+                req.db = db;
                 app.models = db.models;
-                app.db     = db;
+                app.db = db;
 
                 return next();
             });

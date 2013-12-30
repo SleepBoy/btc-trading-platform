@@ -1,10 +1,10 @@
 /**
  * Created by jiangjustin on 13-12-30.
  */
-var crypto          = require('crypto');
-var uuid            = require('node-uuid');
-var passport        = require('passport');
-var passport_local  = require('passport-local');
+var crypto = require('crypto');
+var uuid = require('node-uuid');
+var passport = require('passport');
+var passport_local = require('passport-local');
 
 module.exports = {
     signup_page: function (req, res, next) {
@@ -42,7 +42,7 @@ module.exports = {
                 if (err) return next(err);
 
                 if (emails && emails.length > 0) {
-                    t.rollback(function(err) {
+                    t.rollback(function (err) {
                         if (err) return next(err);
 
                         return res.render('user/signup', { message: 'email is exist' });
@@ -69,7 +69,7 @@ module.exports = {
                             }
                         })
 
-                        t.commit(function(err) {
+                        t.commit(function (err) {
                             if (err) return next(err);
                             console.log(user.serialize());
                             return res.render('user/signup_succ', {user: user.serialize()});

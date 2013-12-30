@@ -1,5 +1,5 @@
 {
-    "name": "bit coin trading platform",
+    "name": "btc-trading-platform",
     "description": "bit coin trading platform",
     "version": "0.1.0",
     "repository": "https://github.com/SleepBoy/btc-trading-platform.git",
@@ -17,7 +17,9 @@
         "passport-local": "0.1.6",
         "connect-flash": "0.1.1",
         "ejs": "0.8.5",
-        "node-uuid": "1.4.1"
+        "node-uuid": "1.4.1",
+        "node-mysql": "0.3.4",
+        "mysql": "2.0.0-rc2"
     },
     "scripts": {
         "start": "script/start",

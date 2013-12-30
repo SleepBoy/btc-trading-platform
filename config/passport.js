@@ -8,12 +8,12 @@ var passport_local = require('passport-local');
 var LocalStrategy = passport_local.Strategy;
 
 module.exports = function (app) {
-    passport.serializeUser(function(user, done) {
+    passport.serializeUser(function (user, done) {
         done(null, user.id);
     });
 
-    passport.deserializeUser(function(id, done) {
-        app.models.user.get(id, function(err, user) {
+    passport.deserializeUser(function (id, done) {
+        app.models.user.get(id, function (err, user) {
             done(err, user);
         });
     });
