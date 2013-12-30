@@ -69,11 +69,13 @@ module.exports = {
                             }
                         })
 
-                        t.commit(function (err) {
-                            if (err) return next(err);
-                            console.log(user.serialize());
-                            return res.render('user/signup_succ', {user: user.serialize()});
-                        });
+                        req.models.user.get(user.id, function (err, user) {
+                            t.commit(function (err) {
+                                if (err) return next(err);
+
+                                return res.render('user/signup_succ', {user: user.serialize()});
+                            });
+                        })
                     });
                 }
             });
